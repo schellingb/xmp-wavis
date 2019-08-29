@@ -1,0 +1,43 @@
+#include <windows.h>
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+
+1000 DIALOG DISCARDABLE  20, 10, 210, 114
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Winamp VIS wrapper"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "",-1,4,1,203,91
+    CTEXT           "Plugin",-1,11,1,21,8
+    LISTBOX         10,10,11,192,61,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Config",12,5,96,63,14
+    PUSHBUTTON      "Start",13,74,96,63,14
+    PUSHBUTTON      "Stop",14,143,96,63,14
+    RTEXT           "Module:",-1,29,77,26,8
+    PUSHBUTTON      "...",15,10,75,17,13
+    COMBOBOX        11,57,75,145,49,CBS_DROPDOWNLIST | WS_GROUP | WS_TABSTOP
+END
+
+1 VERSIONINFO
+	FILEVERSION     1,0,7,0
+	PRODUCTVERSION  1,0,7,0
+	FILEOS          VOS_NT_WINDOWS32
+	FILETYPE        VFT_APP
+{
+	BLOCK "StringFileInfo"
+	{
+		BLOCK "040904b0"
+		{
+			VALUE "ProductName", "xmp-wavis"
+			VALUE "ProductVersion", "rev.7"
+			VALUE "FileDescription", "Winamp visualization in XMPlay"
+			VALUE "FileVersion", "rev.7"
+			VALUE "InternalName", "xmp-wavis"
+			VALUE "OriginalFilename", "xmp-wavis.dll"
+			VALUE "Comments", "http://www.un4seen.com"
+		}
+	}
+	BLOCK "VarFileInfo"
+	{
+		VALUE "Translation", 0x409, 1252
+	}
+}

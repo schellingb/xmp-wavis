@@ -1,0 +1,86 @@
+--------------------------------------------
+               xmp-wavis rev.7
+     ----------------------------------
+      2008-2019 Bernhard Schelling
+ https://github.com/schellingb/xmp-wavis
+--------------------------------------------
+
+This plugin for XMPlay loads and displays Winamp visualization plugins.
+
+When xmp-wavis.dll is copied somewhere under the XMPlay directory,
+it can be found under the 'Options and stuff' screen on the DSP page.
+
+An added VIS wrapper will first have no plugin loaded. To load a plugin,
+open the configuration of the wrapper plugin. It will list all loadable
+Winamp plugins that can be found under the directory of XMPlay.
+To load a plugin outside of the XMPlay directory, use the '...' button.
+
+You can add multiple 'Winamp Vis Wrapper' DSP plugins and run them at
+the same time as long as you don't load the same Winamp plugin DLL twice.
+
+To configure the wrapped Winamp visualization plugin, click the 'Configure'
+button in the option screen.
+
+The plugin also registers an XMPlay shortcut 'Winamp Visualization on/off',
+which toggles the running state of all plugins that have been set up.
+
+
+Notes:
+
+ - To load the same Winamp Visualization plugin multiple times,
+   copy the DLL to force a new loaded instance of it.
+
+
+-----------------------------------------------------------------------------------------------
+
+[2019_08_29 - rev.7]
+
+  Release source code, cleaned up internals, tested with Windows 10
+  Replace KISS FFT library with fft.hpp a public domain library by Alexander Nadeau
+
+
+[2009_02_03 - rev.6]
+
+  Don't show error message when starting XMPlay after an active wrapped plugin DLL has been removed,
+  just cancel the loading of the entire wrapper plugin in that case.
+
+
+[2008_12_05 - rev.5]
+
+  Better support/response for certain player commands (fast forward/rewind/volume control/etc).
+  New version numbering akin to other XMPlay plugins.
+
+
+[2008_12_04 - 0.9.4 (rev.4)]
+
+  Small update which makes the in plugin playlist work better (P key in MilkDrop).
+
+
+[2008_11_26 - 0.9.3 (rev.3)]
+
+  Unicode fixes usable for MilkDrop 2.0e.
+  Shows title in unicode and has the full playlist (P key in MilkDrop).
+
+  Sadly this introduces the requirement for unicows.dll for Windows 9x (supported since 0.9.2)
+  If you need this DLL, google or email me. I tested with unicows.dll 1.1.3790, 258352 bytes.
+
+
+[2008_10_06 - 0.9.2 (rev.2)]
+
+  Fixes for Windows 98 \o/
+
+
+[2008_08_08 - 0.9.1 (rev.1)]
+
+  Frees up memory and stops buffering of samples when not wrapped vis plugin is running.
+
+
+[2008_08_05 - 0.9.0 (first release)]
+
+  First version. Based heavily on its predecessor XMPlay Vis Plugin 'winamp_svp'.
+  It also adds a lot of features including the option to load multiple plugins, nicer
+  configuration and no need to have the XMPlay visualization window open.
+
+  The only feature missing from the old plugin is the disabling of info bubbles while
+  visualizations are displayed. Means you'll see volume changes and song changes in tray
+  even when full screen visualization is active.
